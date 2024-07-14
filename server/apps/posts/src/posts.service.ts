@@ -7,11 +7,11 @@ import { PostsRepository } from './posts.repository';
 export class PostsService {
   constructor(private readonly postsRepository: PostsRepository) {}
 
-  create(createPostDto: CreatePostDto) {
+  create(createPostDto: CreatePostDto, userId: string) {
     return this.postsRepository.create({
       ...createPostDto,
       timestamp: new Date(),
-      userId: '123',
+      userId,
     });
   }
 
