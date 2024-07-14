@@ -1,0 +1,13 @@
+services:
+  posts:
+    build:
+      context: .
+      dockerfile: ./apps/posts/Dockerfile
+      target: development
+    command: pnpm run start:dev posts
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/usr/src/app
+  mongo:
+    image: mongo
