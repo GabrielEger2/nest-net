@@ -6,9 +6,9 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY apps/posts apps/posts
+COPY apps/gateway apps/gateway
 
-RUN npm run build posts
+RUN npm run build gateway
 
 FROM node:alpine As production
 
@@ -23,4 +23,4 @@ RUN npm install --prod
 
 COPY --from=development /usr/src/app/dist ./dist
 
-CMD ["node", "dist/apps/posts/main"]
+CMD ["node", "dist/apps/gateway/main"]
