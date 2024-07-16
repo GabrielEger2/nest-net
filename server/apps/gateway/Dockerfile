@@ -6,9 +6,9 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY apps/gateway apps/gateway
+COPY . .
 
-RUN npm run build gateway
+RUN npm run build
 
 FROM node:alpine As production
 

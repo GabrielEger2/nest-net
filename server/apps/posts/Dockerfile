@@ -6,9 +6,9 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY apps/posts apps/posts
+COPY . .
 
-RUN npm run build posts
+RUN npm run build
 
 FROM node:alpine As production
 

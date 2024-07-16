@@ -7,6 +7,8 @@ services:
     command: npm run start:dev posts
     env_file:
       - ./apps/posts/.env
+    ports:
+      - '3001:3001'
     volumes:
       - .:/usr/src/app
   auth:
@@ -17,6 +19,8 @@ services:
     command: npm run start:dev auth
     env_file:
       - ./apps/auth/.env
+    ports:
+      - '3002:3002'
     volumes:
       - .:/usr/src/app
   gateway:
