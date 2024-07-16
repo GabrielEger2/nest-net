@@ -7,10 +7,6 @@ import { Field, ObjectType } from '@nestjs/graphql';
 export class UserDocument extends AbstractDocument {
   @Prop()
   @Field()
-  joinedAt: Date;
-
-  @Prop()
-  @Field()
   email: string;
 
   @Prop()
@@ -18,7 +14,6 @@ export class UserDocument extends AbstractDocument {
   username: string;
 
   @Prop()
-  @Field()
   password: string;
 }
 
