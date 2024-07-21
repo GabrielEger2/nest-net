@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { PostsService } from './posts.service';
-import { PostsController } from './posts.controller';
 import { DatabaseModule, LoggerModule, AUTH_SERVICE } from '@app/common';
 import { PostsRepository } from './posts.repository';
 import { PostDocument, PostSchema } from './models/post.schema';
@@ -48,7 +47,6 @@ import { PostsResolver } from './posts.resolver';
       },
     ]),
   ],
-  controllers: [PostsController],
   providers: [PostsService, PostsRepository, PostsResolver],
 })
 export class PostsModule {}
