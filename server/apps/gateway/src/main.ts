@@ -5,7 +5,7 @@ import { ConfigService } from '@nestjs/config';
 import { setApp } from './app';
 
 async function bootstrap() {
-  await new Promise((resolve) => setTimeout(resolve, 60000));
+  await new Promise((resolve) => setTimeout(resolve, 6000));
 
   const app = await NestFactory.create(GatewayModule);
   app.useLogger(app.get(Logger));

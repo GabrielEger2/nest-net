@@ -1,39 +1,41 @@
 services:
   posts:
+    restart: always
     build:
       context: .
       dockerfile: ./apps/posts/Dockerfile
-      target: development
-    command: npm run start:dev posts
     env_file:
       - ./apps/posts/.env
     ports:
       - '3001:3001'
     volumes:
-      - .:/usr/src/app
+      - ./apps/posts:/usr/src/app/apps/posts
+      - ./libs/common:/usr/src/app/libs/common
   auth:
+    restart: always
     build:
       context: .
       dockerfile: ./apps/auth/Dockerfile
-      target: development
     command: npm run start:dev auth
     env_file:
       - ./apps/auth/.env
     ports:
       - '3002:3002'
     volumes:
-      - .:/usr/src/app
+      - ./apps/auth:/usr/src/app/apps/auth
+      - ./libs/common:/usr/src/app/libs/common
   gateway:
+    restart: always
     build:
       context: .
       dockerfile: ./apps/gateway/Dockerfile
-      target: development
     command: npm run start:dev gateway
     env_file:
       - ./apps/gateway/.env
     ports:
       - '3000:3000'
     volumes:
-      - .:/usr/src/app
+      - ./apps/gateway:/usr/src/app/apps/gateway
+      - ./libs/common:/usr/src/app/libs/common
   mongo:
     image: mongo

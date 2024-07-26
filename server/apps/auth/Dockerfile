@@ -1,26 +1,16 @@
-FROM node:alpine As development
+FROM node:alpine
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY package.json ./
+COPY package-lock.json ./
 
 RUN npm install
 
-COPY . .
+COPY tsconfig.json ./
+COPY nest-cli.json ./
 
-RUN npm run build
+COPY apps/auth apps/auth
+COPY libs libs
 
-FROM node:alpine As production
-
-ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
-
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-RUN npm install --prod
-
-COPY --from=development /usr/src/app/dist ./dist
-
-CMD ["node", "dist/apps/auth/main"]
+CMD ["npm", "run", "start:dev"]
