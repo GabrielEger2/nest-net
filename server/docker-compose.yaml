@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   posts:
     restart: always
@@ -11,6 +13,7 @@ services:
     volumes:
       - ./apps/posts:/usr/src/app/apps/posts
       - ./libs/common:/usr/src/app/libs/common
+
   auth:
     restart: always
     build:
@@ -24,6 +27,21 @@ services:
     volumes:
       - ./apps/auth:/usr/src/app/apps/auth
       - ./libs/common:/usr/src/app/libs/common
+
+  payments:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./apps/payments/Dockerfile
+    command: npm run start:dev payments
+    env_file:
+      - ./apps/payments/.env
+    ports:
+      - '3003:3003'
+    volumes:
+      - ./apps/payments:/usr/src/app/apps/payments
+      - ./libs/common:/usr/src/app/libs/common
+
   gateway:
     restart: always
     build:
@@ -37,5 +55,6 @@ services:
     volumes:
       - ./apps/gateway:/usr/src/app/apps/gateway
       - ./libs/common:/usr/src/app/libs/common
+
   mongo:
     image: mongo
