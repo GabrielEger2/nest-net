@@ -26,6 +26,10 @@ import { authContext } from './auth.context';
                 name: 'auth',
                 url: configService.getOrThrow('AUTH_GRAPHQL_URL'),
               },
+              {
+                name: 'chat',
+                url: configService.getOrThrow('CHAT_GRAPHQL_URL'),
+              },
             ],
           }),
           buildService({ url }) {

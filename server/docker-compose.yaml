@@ -42,6 +42,21 @@ services:
       - ./apps/payments:/usr/src/app/apps/payments
       - ./libs/common:/usr/src/app/libs/common
 
+  chat:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./apps/chat/Dockerfile
+    command: npm run start:dev chat
+    env_file:
+      - ./apps/chat/.env
+    ports:
+      - '3004:3004'
+    volumes:
+      - ./apps/chat:/usr/src/app/apps/chat
+      - ./libs/common:/usr/src/app/libs/common
+
+
   gateway:
     restart: always
     build:
