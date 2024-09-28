@@ -12,9 +12,4 @@ export class CreatePostDto {
   @IsNotEmpty()
   @Field()
   content: string;
-
-  @IsString()
-  @IsNotEmpty()
-  @Field()
-  githubLink: string;
 }

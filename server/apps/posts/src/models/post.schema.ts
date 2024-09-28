@@ -20,10 +20,6 @@ export class PostDocument extends AbstractDocument {
   @Prop()
   @Field()
   content: string;
-
-  @Prop()
-  @Field()
-  githubLink: string;
 }
 
 export const PostSchema = SchemaFactory.createForClass(PostDocument);
