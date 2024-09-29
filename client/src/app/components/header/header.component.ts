@@ -11,4 +11,19 @@ import { faCircleNodes } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent {
   faCircleNodes = faCircleNodes;
+  isDarkTheme = false;
+
+  ngOnInit() {
+    this.applyTheme();
+  }
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+    this.applyTheme();
+  }
+
+  applyTheme() {
+    document.body.classList.toggle('dark-theme', this.isDarkTheme);
+    document.body.classList.toggle('light-theme', !this.isDarkTheme);
+  }
 }

@@ -1,29 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'client';
-  isDarkTheme = false;
-
-  ngOnInit() {
-    this.applyTheme();
-  }
-
-  toggleTheme() {
-    this.isDarkTheme = !this.isDarkTheme;
-    this.applyTheme();
-  }
-
-  applyTheme() {
-    document.body.classList.toggle('dark-theme', this.isDarkTheme);
-    document.body.classList.toggle('light-theme', !this.isDarkTheme);
-  }
 }
