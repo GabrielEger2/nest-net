@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 
@@ -7,8 +7,23 @@ import { HeaderComponent } from './components/header/header.component';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'client';
+  isDarkTheme = false;
+
+  ngOnInit() {
+    this.applyTheme();
+  }
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+    this.applyTheme();
+  }
+
+  applyTheme() {
+    document.body.classList.toggle('dark-theme', this.isDarkTheme);
+    document.body.classList.toggle('light-theme', !this.isDarkTheme);
+  }
 }

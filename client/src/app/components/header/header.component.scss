@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--base);
+    color: var(--text);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    &__logo {
+      display: flex;
+      align-items: center;
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+  
+    &__links,
+    &__auth {
+      display: flex;
+      gap: 1.5rem; // Space between links
+  
+      a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: bold;
+        transition: color 0.3s ease;
+        font-size: 1rem;
+  
+        &:hover {
+          color: var(--secondary);
+        }
+  
+        &.active {
+          border-bottom: 2px solid var(--accent);
+        }
+      }
+    }
+  }
+  

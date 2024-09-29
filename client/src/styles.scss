@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+}
+
+$themes: (
+  light: (
+    text: #0f050f,
+    background: #fefbfe,
+    primary: #bf45bd,
+    secondary: #dc98c4,
+    accent: #d076a2,
+  ),
+  dark: (
+    text: #faf0fa,
+    background: #040104,
+    primary: #ba40b8,
+    secondary: #67234f,
+    accent: #892f5a,
+  ),
+);
+
+@function theme-color($theme-name, $color) {
+    @return map-get(map-get($themes, $theme-name), $color);
+}
+  
+
+// Define light theme styles
+.light-theme {
+    --text: #{theme-color(light, text)};
+    --base: #{theme-color(light, background)};
+    --primary: #{theme-color(light, primary)};
+    --secondary: #{theme-color(light, secondary)};
+    --accent: #{theme-color(light, accent)};
+}
+
+// Define dark theme styles
+.dark-theme {
+    --text: #{theme-color(dark, text)};
+    --base: #{theme-color(dark, background)};
+    --primary: #{theme-color(dark, primary)};
+    --secondary: #{theme-color(dark, secondary)};
+    --accent: #{theme-color(dark, accent)};
+}

@@ -1,1 +1,14 @@
-<p>header works!</p>
+<div class="navbar">
+    <div class="navbar__logo">
+        <fa-icon [icon]="faCircleNodes"></fa-icon>
+    </div>
+    <div class="navbar__links">
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </div>
+    <div class="navbar__auth">
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+        <a routerLink="/register" routerLinkActive="active">Register</a>
+    </div>
+</div>
