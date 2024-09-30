@@ -1,0 +1,11 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: var(--base);
+}
+
+.container {
+    max-width: 1600px;
+    width: 100%;
+}

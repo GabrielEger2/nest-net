@@ -7,14 +7,14 @@ body {
 $themes: (
   light: (
     text: #0f050f,
-    background: #fefbfe,
+    base: #fefbfe,
     primary: #bf45bd,
     secondary: #dc98c4,
     accent: #d076a2,
   ),
   dark: (
     text: #faf0fa,
-    background: #040104,
+    base: #040104,
     primary: #ba40b8,
     secondary: #67234f,
     accent: #892f5a,
@@ -29,7 +29,7 @@ $themes: (
 // Define light theme styles
 .light-theme {
     --text: #{theme-color(light, text)};
-    --base: #{theme-color(light, background)};
+    --base: #{theme-color(light, base)};
     --primary: #{theme-color(light, primary)};
     --secondary: #{theme-color(light, secondary)};
     --accent: #{theme-color(light, accent)};
@@ -38,7 +38,7 @@ $themes: (
 // Define dark theme styles
 .dark-theme {
     --text: #{theme-color(dark, text)};
-    --base: #{theme-color(dark, background)};
+    --base: #{theme-color(dark, base)};
     --primary: #{theme-color(dark, primary)};
     --secondary: #{theme-color(dark, secondary)};
     --accent: #{theme-color(dark, accent)};

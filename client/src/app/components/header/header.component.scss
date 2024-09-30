@@ -5,8 +5,14 @@
     padding: 1rem 2rem;
     background-color: var(--base);
     color: var(--text);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--base-2);
+
     &__logo {
       display: flex;
       align-items: center;
