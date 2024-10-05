@@ -1,16 +1,9 @@
-// Variables
-$primary-color: #3498db;
-$hover-color: darken($primary-color, 10%);
-$background-color: #ecf0f1;
-$text-color: #2c3e50;
-$light-text-color: lighten($text-color, 20%);
-
 // Login Container
 .login-container {
   display: flex;
   justify-content: center;
   height: 100%;
-  width: 80%;
+  width: 100%;
   align-items: center;
 
   &__image {
@@ -28,14 +21,12 @@ $light-text-color: lighten($text-color, 20%);
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: white;
 
     form {
-      width: 80%;
+      width: 70%;
 
       h2 {
-        color: $text-color;
+        color: var(--text);
         margin-bottom: 1.25rem;
         font-size: 1.75rem;
       }
@@ -45,7 +36,7 @@ $light-text-color: lighten($text-color, 20%);
 
         label {
           display: block;
-          color: $text-color;
+          color: var(--text);
           margin-bottom: 0.5rem;
           font-weight: bold;
         }
@@ -53,24 +44,24 @@ $light-text-color: lighten($text-color, 20%);
         input {
           width: 100%;
           padding: 0.75rem;
-          border: 1px solid $light-text-color;
+          border: 1px solid var(--text);
           border-radius: 0.3125rem;
           font-size: 1rem;
 
           &:focus {
             outline: none;
-            border-color: $primary-color;
+            border-color: var(--primary);
           }
         }
       }
 
       &__text {
         text-align: center;
-        color: $text-color;
+        color: var(--text);
         font-size: 1rem;
 
         a {
-          color: $primary-color;
+          color: var(--primary);
           text-decoration: none;
           font-weight: bold;
 

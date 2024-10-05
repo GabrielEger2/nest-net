@@ -1,41 +1,72 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
     background-color: var(--base);
     color: var(--text);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: fixed;
+    display: flex;
+    justify-content: center;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--base-2);
 
+    &__container {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      width: 100%;
+      max-width: 1600px;
+    }
+
     &__logo {
       display: flex;
       align-items: center;
       color: var(--primary);
       font-size: 1.25rem;
+      width: 33.33%;
     }
   
-    &__links,
-    &__auth {
+    &__links {
       display: flex;
-      gap: 1.5rem; // Space between links
-  
+      gap: 1.5rem;
+      width: 33.33%;
+      justify-content: center;
+    
       a {
         text-decoration: none;
         color: var(--text);
         font-weight: bold;
         transition: color 0.3s ease;
         font-size: 1rem;
-  
+    
         &:hover {
           color: var(--secondary);
         }
-  
+    
+        &.active {
+          border-bottom: 2px solid var(--accent);
+        }
+      }
+    }
+    
+    &__auth {
+      display: flex;
+      gap: 1.5rem; // Space between links
+      width: 33.33%;
+      justify-content: flex-end;
+    
+      a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: bold;
+        transition: color 0.3s ease;
+        font-size: 1rem;
+    
+        &:hover {
+          color: var(--secondary);
+        }
+    
         &.active {
           border-bottom: 2px solid var(--accent);
         }
